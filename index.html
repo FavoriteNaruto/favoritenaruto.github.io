@@ -243,11 +243,17 @@ var items = [
     {id: 'pain', name: 'Pain', image: 'imgs/Pain.png'},
     {id: 'obito', name: 'Obito', image: 'imgs/Obito.png'},
     {id: 'deidara', name: 'Deidara', image: 'imgs/Deidara.png'},
-    {id: 'kakashi', name: 'Kakashi', image: 'imgs/Kakashi.png'}
+    {id: 'kakashi', name: 'Kakashi', image: 'imgs/Kakashi.png'},
     {id: 'hidan', name: 'Hidan', image: 'imgs/Hidan.png'},
     {id: 'hiruzen', name: 'Hiruzen', image: 'imgs/Hiruzen.png'},
     {id: 'sakura', name: 'Sakura', image: 'imgs/Sakura.png'},
-    {id: 'tsunade', name: 'Tsunade', image: 'imgs/Tsunade.png'}
+    {id: 'tsunade', name: 'Tsunade', image: 'imgs/Tsunade.png'},
+    {id: 'hinata', name: 'Hinata', image: 'imgs/Hinata.png'},
+    {id: 'neji', name: 'Neji', image: 'imgs/Neji.png'},
+    {id: 'gai', name: 'Maito Gai', image: 'imgs/Gai.png'},
+    {id: 'lee', name: 'Lee', image: 'imgs/Lee.png'},
+    {id: 'minato', name: 'Minato', image: 'imgs/Minato.png'},
+           
     
               /*
              {id: 'phoenix', name: 'Phoenix Wright', image: 'phoenixwright.png'},
@@ -256,7 +262,12 @@ var items = [
               */
     ]
 var myPicker = new picker.Picker({
-    items: items
+    items: items,
+    defaultSettings: {
+      minBatchSize: 8,
+      maxBatchSize: 10
+}
+                                 
 });
 
 
@@ -267,21 +278,11 @@ var pickerUI = new PickerUI(myPicker, {
         undo: "#undo",
         redo: "#redo",
         evaluating: "#evaluating",
-        favorites: "#favorites"
+        favorites: "#favorites",
     }
 });
 
 pickerUI.initialize();
-
-//Esto es para escoger el numero de personajes
-var myPicker = new picker.Picker({
-    items: items,
-    localStorageKey: 'picker-state',
-    defaultSettings: {
-        minBatchSize: 2,
-        maxBatchSize: 6
-    }
-});
 
 /* Sortable favorites - you can safely remove this, and the Sortable.min.js script, if you don't want to be able to sort your favorite list. */
 var sortable = new Sortable(pickerUI.elem.favorites.get(0), {
